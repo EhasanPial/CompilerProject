@@ -5,18 +5,22 @@
 	#include<stdlib.h>
 %}
 
-%%  
 
 identifiers "name"[a-zA-Z]([a-zA-Z0-9])*
 single_line_comment "//".*
-multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"last_comment"[/]
+multiple_line_comment [ ]*[/]"{"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"}"[/]
+
+
+%%  
 
 {single_line_comment} {
 	printf("This is single line comment\n");
-
+}
+{multiple_line_comment} {
+	printf("This is multiple line comment\n");
 }
 
-":int"      { printf("int"); } 
+":int"      {printf("int"); } 
 ":float"    {printf("float");}
 ":float8b"  {printf("double");} 
 ":string"   {printf("string");} 
@@ -38,9 +42,13 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 "not="     {printf("!=");}
 "plus+"       {printf("++");}
 "minus-"     {printf("--");}
-"lthen"         {printf("<");}
-"gthen"     {printf(">");}
+"lthen"         {printf("%c",60);}
+"gthen"     {printf("%c",62);}
 ":="         {printf("=");}
+"plus=" {printf("+=");}
+"minus-" {printf("-=");}
+"multi=" {printf("*=");}
+"div="  {printf("/=");}
      
 "+"  {printf("+");}
 "-"   {printf("-");}
@@ -50,19 +58,48 @@ multiple_line_comment [ ]*[/]"first_comment"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*
 "(" {printf("(");}
 ")" {printf(")");}
 "-->" {printf("{");}
-"<--" {printf("}");}
-";" {printf(";;");}
+"<--"{printf("}");}
+";"{printf(";;");}
 
-"fn-sqrt" {printf("sqrt()");}
-"fn-sin"  {printf("sin()");}
-"fn-cos"     {{printf("cos()");}}
+"fn-sqrt"{printf("sqrt()");}
+"fn-sin"    {printf("sin()");}
+"fn-cos"    {{printf("cos()");}}
 "fn-tan"   {printf("tan()");}
 "fn-log"    {printf("log()");}
 "fn-pow"    {printf("pow()");}
 
+"bd1971" {printf("#include");}
+"_main_" {printf("main()");}
+"--ret" {printf("return");}
+"System.out.println" {printf("printf");}
+"System.in.input"{printf("scanf");}
+"util.stdio" {printf("stdio.h");}
+"util.string" {printf("string.h");}
+"util.math" {printf("math.h");}
+"util.stdlib" {printf("stdlib.h");}
 
- 
-%%
+
+" " {printf(" ");}
+[0-9]+ { 
+	int n = atoi(yytext);
+	printf("%d", n);
+}
+
+{identifiers} {
+	char* a=strdup(yytext);
+    char s[50];
+    int j = 0;
+    for(int i = 7 ; i < strlen(a) ; i++){
+        s[j++] = a[i];
+    }
+    s[j] = '\0';
+	printf("%s", s);
+}
+[a-zA-Z] {printf("%s", yytext);}
+
+
+
+%% 
 
 
 int yywrap(){}
@@ -71,4 +108,5 @@ int main(){
     yylex();
     yyin = freopen("input.txt","r",stdin);
 	yyout = freopen("output.txt","w",stdout);
+    
 }
