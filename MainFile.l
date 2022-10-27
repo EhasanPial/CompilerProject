@@ -6,7 +6,7 @@
 %}
 
 
-identifiers "name"[a-zA-Z]([a-zA-Z0-9])*
+identifiers [a-zA-Z]([a-zA-Z0-9])*[_]
 single_line_comment "//".*
 multiple_line_comment [ ]*[/]"{"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"}"[/]
 
@@ -89,7 +89,7 @@ multiple_line_comment [ ]*[/]"{"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"}"[/]
 	char* a=strdup(yytext);
     char s[50];
     int j = 0;
-    for(int i = 4 ; i < strlen(a) ; i++){
+    for(int i = 4 ; a[i] != '_' ; i++){
         s[j++] = a[i];
     }
     s[j] = '\0';

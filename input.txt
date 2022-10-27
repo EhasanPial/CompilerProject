@@ -1,51 +1,50 @@
-#bd1971lthenutil.stdiogthen
-#bd1971lthenutil.stringgthen
-#bd1971lthenutil.mathgthen
-#bd1971lthenutil.stdlibgthen
-
+bd1971lthenutil.stdiogthen
+bd1971lthenutil.stringgthen
+bd1971lthenutil.mathgthen
+bd1971lthenutil.stdlibgthen
 :int _main_
 -->
-    :int namea[10][10], nameb[10][10], namemul[10][10], namer, namec, namei, namej, namek;;
+    :int namea_[10][10], nameb_[10][10], namemul_[10][10], namer_, namec_, namei_, namej_, namek_;;
      
     System.out.println("enter the number of row=");;
-    System.in.input("%d", &namer);;
+    System.in.input("%d", &namer_);;
     System.out.println("enter the number of column=");;
-    System.in.input("%d", &namec);;
+    System.in.input("%d", &namec_);;
     System.out.println("enter the first matrix element=\n");;
-    -loop (namei := 0;; namei lthen namer;; nameiplus+)
+    -loop (namei_ := 0;; namei_ lthen namer_;; namei_plus+)
     -->
-        -loop (namej := 0;; namej lthen namec;; namejplus+)
+        -loop (namej_ := 0;; namej_ lthen namec_;; namej_plus+)
         -->
-            System.in.input("%d", &namea[namei][namej]);;
+            System.in.input("%d", &namea_[namei_][namej_]);;
         <--
     <--
     System.out.println("enter the second matrix element=\n");;
-    -loop (namei := 0;; namei lthen namer;; nameiplus+)
+    -loop (namei_ := 0;; namei_ lthen namer_;; namei_plus+)
     -->
-        -loop (namej := 0;; namej lthen namec;; namejplus+)
+        -loop (namej_ := 0;; namej_ lthen namec_;; namej_plus+)
         -->
-            System.in.input("%d", &b[namei][namej]);;
+            System.in.input("%d", &b[namei_][namej_]);;
         <--
     <--
 
     System.out.println("multiply of the matrix=\n");;
-    -loop (namei := 0;; namei lthen namer;; nameiplus+)
+    -loop (namei_ := 0;; namei_ lthen namer_;; namei_plus+)
     -->
-        -loop (namej := 0;; namej lthen namec;; namejplus+)
+        -loop (namej_ := 0;; namej_ lthen namec_;; namej_plus+)
         -->
-            namemul[namei][namej] = 0;;
-            -loop (namek := 0;; namek lthen namec;; namekplus+)
+            namemul_[namei_][namej_] = 0;;
+            -loop (namek_ := 0;; namek_ lthen namec_;; namek_plus+)
             -->
-                namemul[namei][namej] plus= namea[namei][namek] * nameb[namek][namej];;
+                namemul_[namei_][namej_] plus= namea_[namei_][namek_] * nameb_[namek_][namej_] ;;
             <--
         <--
     <--
      
-    -loop (namei := 0;; namei lthen namer;; nameiplus+)
+    -loop (namei_ := 0;; namei_ lthen namer_;; namei_plus+)
     -->
-        -loop (namej := 0;; namej lthen namec;; namejplus+)
+        -loop (namej_ := 0;; namej_ lthen namec_;; namej_plus+)
         -->
-            System.out.println("%d\t", namemul[namei][namej]);;
+            System.out.println("%d\t", namemul_[namei_][namej_]);;
         <--
         System.out.println("\n");;
     <--
