@@ -46,22 +46,22 @@ multiple_line_comment [ ]*[/]"{"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"}"[/]
 "gthen"     {printf("%c",62);}
 ":="         {printf("=");}
 "plus=" {printf("+=");}
-"minus-" {printf("-=");}
+"minus=" {printf("-=");}
 "multi=" {printf("*=");}
 "div="  {printf("/=");}
      
 "+"  {printf("+");}
 "-"   {printf("-");}
-"*"   { {printf("*");}}
+"*"    {printf("*");}
 "/"    {printf("/");}
-     
+
 "(" {printf("(");}
 ")" {printf(")");}
 "-->" {printf("{");}
-"<--"{printf("}");}
-";"{printf(";;");}
+"<--" {printf("}");}
+";;" {printf(";");}
 
-"fn-sqrt"{printf("sqrt()");}
+"fn-sqrt"   {printf("sqrt()");}
 "fn-sin"    {printf("sin()");}
 "fn-cos"    {{printf("cos()");}}
 "fn-tan"   {printf("tan()");}
@@ -72,7 +72,7 @@ multiple_line_comment [ ]*[/]"{"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"}"[/]
 "_main_" {printf("main()");}
 "--ret" {printf("return");}
 "System.out.println" {printf("printf");}
-"System.in.input"{printf("scanf");}
+"System.in.input"   {printf("scanf");}
 "util.stdio" {printf("stdio.h");}
 "util.string" {printf("string.h");}
 "util.math" {printf("math.h");}
@@ -89,7 +89,7 @@ multiple_line_comment [ ]*[/]"{"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"}"[/]
 	char* a=strdup(yytext);
     char s[50];
     int j = 0;
-    for(int i = 7 ; i < strlen(a) ; i++){
+    for(int i = 4 ; i < strlen(a) ; i++){
         s[j++] = a[i];
     }
     s[j] = '\0';
@@ -105,8 +105,8 @@ multiple_line_comment [ ]*[/]"{"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"}"[/]
 int yywrap(){}
 
 int main(){
-    yylex();
     yyin = freopen("input.txt","r",stdin);
 	yyout = freopen("output.txt","w",stdout);
+    yylex();
     
 }
