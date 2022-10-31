@@ -4,49 +4,77 @@ bd1971lthenutil.mathgthen
 bd1971lthenutil.stdlibgthen
 :int _main_
 -->
-    :int namea_[10][10], nameb_[10][10], namemul_[10][10], namer_, namec_, namei_, namej_, namek_;;
+    :int a_[10][10], b_[10][10], mul_[10][10], r_, c_, i_, j_, k_;;
      
     System.out.println("enter the number of row=");;
-    System.in.input("%d", &namer_);;
+    System.in.input("%d", &r_);;
     System.out.println("enter the number of column=");;
-    System.in.input("%d", &namec_);;
+    System.in.input("%d", &c_);;
     System.out.println("enter the first matrix element=\n");;
-    -loop (namei_ := 0;; namei_ lthen namer_;; namei_plus+)
+    -loop (i_ := 0;; i_ lthen r_;; i_plus+)
     -->
-        -loop (namej_ := 0;; namej_ lthen namec_;; namej_plus+)
+        -loop (j_ := 0;; j_ lthen c_;; j_plus+)
         -->
-            System.in.input("%d", &namea_[namei_][namej_]);;
+            System.in.input("%d", &a_[i_][j_]);;
         <--
     <--
     System.out.println("enter the second matrix element=\n");;
-    -loop (namei_ := 0;; namei_ lthen namer_;; namei_plus+)
+    -loop (i_ := 0;; i_ lthen r_;; i_plus+)
     -->
-        -loop (namej_ := 0;; namej_ lthen namec_;; namej_plus+)
+        -loop (j_ := 0;; j_ lthen c_;; j_plus+)
         -->
-            System.in.input("%d", &b[namei_][namej_]);;
+            System.in.input("%d", &b[i_][j_]);;
         <--
     <--
 
     System.out.println("multiply of the matrix=\n");;
-    -loop (namei_ := 0;; namei_ lthen namer_;; namei_plus+)
+    -loop (i_ := 0;; i_ lthen r_;; i_plus+)
     -->
-        -loop (namej_ := 0;; namej_ lthen namec_;; namej_plus+)
+        -loop (j_ := 0;; j_ lthen c_;; j_plus+)
         -->
-            namemul_[namei_][namej_] = 0;;
-            -loop (namek_ := 0;; namek_ lthen namec_;; namek_plus+)
+            mul_[i_][j_] = 0;;
+            -loop (k_ := 0;; k_ lthen c_;; k_plus+)
             -->
-                namemul_[namei_][namej_] plus= namea_[namei_][namek_] * nameb_[namek_][namej_] ;;
+                mul_[i_][j_] plus= a_[i_][k_] * b_[k_][j_] ;;
             <--
         <--
     <--
      
-    -loop (namei_ := 0;; namei_ lthen namer_;; namei_plus+)
+    -loop (i_ := 0;; i_ lthen r_;; i_plus+)
     -->
-        -loop (namej_ := 0;; namej_ lthen namec_;; namej_plus+)
+        -loop (j_ := 0;; j_ lthen c_;; j_plus+)
         -->
-            System.out.println("%d\t", namemul_[namei_][namej_]);;
+            System.out.println("%d\t", mul_[i_][j_]);;
+            --break;
         <--
         System.out.println("\n");;
     <--
+
+    -iff(mul_[5][5] % 2 equal= 0)
+    -->
+        System.out.println("Even") ;;
+    <--
+    -else iff(mul[5][5] % 3 equal= 0) 
+    -->
+        System.out.println("Divisible by 3") ;;
+    <--
+    -otherwise 
+    -->
+         
+        :float x_ := sqrt(mul[5][5])) ;
+        
+         x_ := sin(mul[5][5]);
+        
+         x_ := cos(mul[5][5]) ;
+        
+         x_ := tan(mul[5][5]) ;
+        
+         x_ := log(mul[5][5]) ;
+        
+         x_ := pow(mul[5][5]) ;
+         
+    <--
+
+    
     --ret 0;;
 <--

@@ -286,30 +286,30 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 #define YY_END_OF_BUFFER 56
 static yyconst short int yy_accept[221] =
     {   0,
-        0,    0,   56,   55,   51,   31,   32,   29,   27,   28,
-       30,   52,   55,   55,   55,   54,   54,   55,   54,   54,
+        0,    0,   56,   55,   49,   29,   30,   27,   25,   26,
+       28,   50,   55,   55,   55,   54,   54,   55,   54,   54,
        54,   54,   54,   54,   54,   54,   54,   54,    0,    0,
-        0,    0,    0,    0,    0,    0,    1,    0,   52,   22,
-        0,    0,    0,    0,   35,    0,    0,   53,    0,    0,
+        0,    0,    0,    0,    0,    0,   51,    0,   50,   20,
+        0,    0,    0,    0,   33,    0,    0,   53,    0,    0,
         0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,   33,    0,    0,    0,    0,    0,    0,    0,    0,
-        1,    0,    0,    0,    0,    0,    0,   34,    0,    0,
+        0,   31,    0,    0,    0,    0,    0,    0,    0,    0,
+       51,    0,    0,    0,    0,    0,    0,   32,    0,    0,
         0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    9,    0,    0,    0,    2,
+        0,    0,    0,    0,    0,    7,    0,    0,    0,   52,
 
-        0,    3,    0,    0,    0,    0,    0,   26,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,    0,   17,    0,
-        0,    0,    0,   44,    0,   12,    0,    0,    0,    0,
-        8,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,   21,   20,    0,    0,   18,   23,    0,    0,   15,
-        0,    0,    0,    4,    0,    0,   43,   42,   16,   38,
-       40,   41,   37,    0,   39,   19,   24,   25,    0,    0,
-       14,    0,    0,   13,    0,    6,    0,   36,    0,    0,
-        0,    0,    5,    0,    0,    0,    0,    0,    0,   11,
-        0,    7,    0,    0,   49,    0,    0,    0,   10,    0,
+        0,    1,    0,    0,    0,    0,    0,   24,    0,    0,
+        0,    0,    0,    0,    0,    0,    0,    0,   15,    0,
+        0,    0,    0,   42,    0,   10,    0,    0,    0,    0,
+        6,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+        0,   19,   18,    0,    0,   16,   21,    0,    0,   13,
+        0,    0,    0,    2,    0,    0,   41,   40,   14,   36,
+       38,   39,   35,    0,   37,   17,   22,   23,    0,    0,
+       12,    0,    0,   11,    0,    4,    0,   34,    0,    0,
+        0,    0,    3,    0,    0,    0,    0,    0,    0,    9,
+        0,    5,    0,    0,   47,    0,    0,    0,    8,    0,
 
-        0,   47,    0,    0,    0,    0,   50,   48,    0,    0,
-        0,    0,    0,    0,   46,    0,    0,    0,   45,    0
+        0,   45,    0,    0,    0,    0,   48,   46,    0,    0,
+        0,    0,    0,    0,   44,    0,    0,    0,   43,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -671,7 +671,9 @@ YY_DECL
 #line 14 "MainFile.l"
 
 
-#line 675 "lex.yy.c"
+
+
+#line 677 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -756,279 +758,279 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 16 "MainFile.l"
-{
-	printf("This is single line comment\n");
-}
+#line 18 "MainFile.l"
+{printf("int"); } 
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 19 "MainFile.l"
-{
-	printf("This is multiple line comment\n");
-}
+{printf("float");}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 23 "MainFile.l"
-{printf("int"); } 
+#line 20 "MainFile.l"
+{printf("double");} 
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 24 "MainFile.l"
-{printf("float");}
+#line 21 "MainFile.l"
+{printf("string");} 
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 25 "MainFile.l"
-{printf("double");} 
+#line 22 "MainFile.l"
+{printf("char");}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 26 "MainFile.l"
-{printf("string");} 
+#line 23 "MainFile.l"
+{printf("void");} 
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 27 "MainFile.l"
-{printf("char");}
+#line 26 "MainFile.l"
+{ printf("if");}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 28 "MainFile.l"
-{printf("void");} 
+#line 27 "MainFile.l"
+{printf("else");}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 31 "MainFile.l"
-{ printf("if");}
+#line 28 "MainFile.l"
+{printf("else if");}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 32 "MainFile.l"
-{printf("else");}
+#line 31 "MainFile.l"
+{printf("for");}    
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 33 "MainFile.l"
-{printf("else if");}
+#line 32 "MainFile.l"
+{printf("while");}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 36 "MainFile.l"
-{printf("for");}    
+#line 33 "MainFile.l"
+{printf("break");}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 37 "MainFile.l"
-{printf("while");}
+#line 34 "MainFile.l"
+{printf("continue");}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 38 "MainFile.l"
-{printf("break");}
+#line 36 "MainFile.l"
+{printf("==");}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 39 "MainFile.l"
-{printf("continue");}
+#line 37 "MainFile.l"
+{printf("!=");}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 41 "MainFile.l"
-{printf("==");}
+#line 38 "MainFile.l"
+{printf("++");}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 42 "MainFile.l"
-{printf("!=");}
+#line 39 "MainFile.l"
+{printf("--");}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 43 "MainFile.l"
-{printf("++");}
+#line 40 "MainFile.l"
+{printf("%c",60);}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 44 "MainFile.l"
-{printf("--");}
+#line 41 "MainFile.l"
+{printf("%c",62);}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 45 "MainFile.l"
-{printf("%c",60);}
+#line 42 "MainFile.l"
+{printf("=");}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 46 "MainFile.l"
-{printf("%c",62);}
+#line 43 "MainFile.l"
+{printf("+=");}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 47 "MainFile.l"
-{printf("=");}
+#line 44 "MainFile.l"
+{printf("-=");}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 48 "MainFile.l"
-{printf("+=");}
+#line 45 "MainFile.l"
+{printf("*=");}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 49 "MainFile.l"
-{printf("-=");}
+#line 46 "MainFile.l"
+{printf("/=");}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 50 "MainFile.l"
-{printf("*=");}
+#line 48 "MainFile.l"
+{printf("+");}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 51 "MainFile.l"
-{printf("/=");}
+#line 49 "MainFile.l"
+{printf("-");}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 53 "MainFile.l"
-{printf("+");}
+#line 50 "MainFile.l"
+{printf("*");}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 54 "MainFile.l"
-{printf("-");}
+#line 51 "MainFile.l"
+{printf("/");}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 55 "MainFile.l"
-{printf("*");}
+#line 53 "MainFile.l"
+{printf("(");}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 56 "MainFile.l"
-{printf("/");}
+#line 54 "MainFile.l"
+{printf(")");}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 58 "MainFile.l"
-{printf("(");}
+#line 55 "MainFile.l"
+{printf("{");}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 59 "MainFile.l"
-{printf(")");}
+#line 56 "MainFile.l"
+{printf("}");}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 60 "MainFile.l"
-{printf("{");}
+#line 57 "MainFile.l"
+{printf(";");}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 61 "MainFile.l"
-{printf("}");}
+#line 59 "MainFile.l"
+{printf("sqrt");}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 62 "MainFile.l"
-{printf(";");}
+#line 60 "MainFile.l"
+{printf("sin");}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 64 "MainFile.l"
-{printf("sqrt()");}
+#line 61 "MainFile.l"
+{{printf("cos");}}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 65 "MainFile.l"
-{printf("sin()");}
+#line 62 "MainFile.l"
+{printf("tan");}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 66 "MainFile.l"
-{{printf("cos()");}}
+#line 63 "MainFile.l"
+{printf("log");}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 67 "MainFile.l"
-{printf("tan()");}
+#line 64 "MainFile.l"
+{printf("pow");}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 68 "MainFile.l"
-{printf("log()");}
+#line 66 "MainFile.l"
+{printf("#include");}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 69 "MainFile.l"
-{printf("pow()");}
+#line 67 "MainFile.l"
+{printf("main()");}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 71 "MainFile.l"
-{printf("#include");}
+#line 68 "MainFile.l"
+{printf("return");}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 72 "MainFile.l"
-{printf("main()");}
+#line 69 "MainFile.l"
+{printf("printf");}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 73 "MainFile.l"
-{printf("return");}
+#line 70 "MainFile.l"
+{printf("scanf");}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 74 "MainFile.l"
-{printf("printf");}
+#line 71 "MainFile.l"
+{printf("stdio.h");}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 75 "MainFile.l"
-{printf("scanf");}
+#line 72 "MainFile.l"
+{printf("string.h");}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 76 "MainFile.l"
-{printf("stdio.h");}
+#line 73 "MainFile.l"
+{printf("math.h");}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 77 "MainFile.l"
-{printf("string.h");}
+#line 74 "MainFile.l"
+{printf("stdlib.h");}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 78 "MainFile.l"
-{printf("math.h");}
+#line 77 "MainFile.l"
+{printf(" ");}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 79 "MainFile.l"
-{printf("stdlib.h");}
-	YY_BREAK
-case 51:
-YY_RULE_SETUP
-#line 82 "MainFile.l"
-{printf(" ");}
-	YY_BREAK
-case 52:
-YY_RULE_SETUP
-#line 83 "MainFile.l"
+#line 78 "MainFile.l"
 { 
 	int n = atoi(yytext);
 	printf("%d", n);
 }
 	YY_BREAK
+case 51:
+YY_RULE_SETUP
+#line 83 "MainFile.l"
+{
+	printf("This is single line comment\n");
+}
+	YY_BREAK
+case 52:
+YY_RULE_SETUP
+#line 86 "MainFile.l"
+{
+	printf("This is multiple line comment\n");
+}
+	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 88 "MainFile.l"
+#line 90 "MainFile.l"
 {
 	char* a=strdup(yytext);
     char s[50];
     int j = 0;
-    for(int i = 4 ; a[i] != '_' ; i++){
+    for(int i = 0 ; a[i] != '_' ; i++){
         s[j++] = a[i];
     }
     s[j] = '\0';
@@ -1037,15 +1039,15 @@ YY_RULE_SETUP
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 98 "MainFile.l"
+#line 101 "MainFile.l"
 {printf("%s", yytext);}
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 102 "MainFile.l"
+#line 105 "MainFile.l"
 ECHO;
 	YY_BREAK
-#line 1049 "lex.yy.c"
+#line 1051 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1931,7 +1933,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 102 "MainFile.l"
+#line 105 "MainFile.l"
 
 
 

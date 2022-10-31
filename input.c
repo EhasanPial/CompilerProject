@@ -45,8 +45,11 @@ bd1971lthenutil.stdlibgthen
         -loop (j_ := 0;; j_ lthen c_;; j_plus+)
         -->
             System.out.println("%d\t", mul_[i_][j_]);;
+            --break;
         <--
         System.out.println("\n");;
     <--
+
+    
     --ret 0;;
 <--

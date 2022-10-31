@@ -13,12 +13,7 @@ multiple_line_comment [ ]*[/]"{"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"}"[/]
 
 %%  
 
-{single_line_comment} {
-	printf("This is single line comment\n");
-}
-{multiple_line_comment} {
-	printf("This is multiple line comment\n");
-}
+
 
 ":int"      {printf("int"); } 
 ":float"    {printf("float");}
@@ -61,12 +56,12 @@ multiple_line_comment [ ]*[/]"{"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"}"[/]
 "<--" {printf("}");}
 ";;" {printf(";");}
 
-"fn-sqrt"   {printf("sqrt()");}
-"fn-sin"    {printf("sin()");}
-"fn-cos"    {{printf("cos()");}}
-"fn-tan"   {printf("tan()");}
-"fn-log"    {printf("log()");}
-"fn-pow"    {printf("pow()");}
+"fn-sqrt"   {printf("sqrt");}
+"fn-sin"    {printf("sin");}
+"fn-cos"    {{printf("cos");}}
+"fn-tan"   {printf("tan");}
+"fn-log"    {printf("log");}
+"fn-pow"    {printf("pow");}
 
 "bd1971" {printf("#include");}
 "_main_" {printf("main()");}
@@ -85,16 +80,25 @@ multiple_line_comment [ ]*[/]"{"[a-zA-Z0-9!@#*(){}_+-,.:\|?><\n\t ]*"}"[/]
 	printf("%d", n);
 }
 
+{single_line_comment} {
+	printf("This is single line comment\n");
+}
+{multiple_line_comment} {
+	printf("This is multiple line comment\n");
+}
+
 {identifiers} {
 	char* a=strdup(yytext);
     char s[50];
     int j = 0;
-    for(int i = 4 ; a[i] != '_' ; i++){
+    for(int i = 0 ; a[i] != '_' ; i++){
         s[j++] = a[i];
     }
     s[j] = '\0';
 	printf("%s", s);
+    
 }
+
 [a-zA-Z] {printf("%s", yytext);}
 
 
